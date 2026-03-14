@@ -1420,21 +1420,60 @@ button {
   font-weight: 400;
 }
 
+.budget-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-500);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.budget-label::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 2px;
+  background: currentColor;
+}
+
+.after .budget-label {
+  color: var(--gold-400);
+}
+
 .comparison-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.arrow-text {
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+  color: var(--gold-600);
+  background: var(--gold-50);
+  padding: 2px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--gold-200);
+  white-space: nowrap;
+}
+
+.comparison-arrow-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50px;
   height: 50px;
-  background: var(--gold-50);
-  color: var(--gold-500);
+  background: var(--gold-500);
+  color: var(--white);
   border-radius: 50%;
-  box-shadow: var(--shadow-md);
-}
-
-.comparison-arrow svg {
-  width: 24px;
-  height: 24px;
+  box-shadow: 0 4px 15px rgba(212, 167, 44, 0.4);
+  transition: transform 0.3s ease;
 }
 
 .comparison-note {
