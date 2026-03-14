@@ -1475,7 +1475,7 @@ button {
 .cost-indicator::after {
   content: "";
   position: absolute;
-  left: -2px;
+  left: -8px;
   width: 8px;
   height: 2px;
   background: var(--gray-300);
