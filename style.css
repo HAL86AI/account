@@ -1444,6 +1444,89 @@ button {
   color: var(--gold-400);
 }
 
+.comparison-bar-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.comparison-bar {
+  flex: 1;
+  display: flex;
+  height: 80px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0; /* Wrapperで管理 */
+}
+
+.cost-indicator {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--gray-300);
+  position: relative;
+  min-width: 100px;
+}
+
+.cost-indicator::before,
+.cost-indicator::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  width: 8px;
+  height: 2px;
+  background: var(--gray-300);
+}
+
+.cost-indicator::before { top: 0; }
+.cost-indicator::after { bottom: 0; }
+
+.after .cost-indicator {
+  border-left-color: var(--gold-500);
+}
+
+.after .cost-indicator::before,
+.after .cost-indicator::after {
+  background: var(--gold-500);
+}
+
+.cost-value {
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--gray-600);
+  white-space: nowrap;
+}
+
+.after .cost-value {
+  color: var(--gold-400);
+}
+
+/* Mobile Tweak for Cost Indicator */
+@media (max-width: 1080px) {
+  .comparison-bar-wrapper {
+    gap: 1rem;
+  }
+  
+  .cost-indicator {
+    padding-left: 0.75rem;
+    min-width: 70px;
+  }
+
+  .cost-value {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comparison-bar-wrapper {
+    flex-direction: row; /* 横並び維持 */
+  }
+}
+
 .comparison-arrow {
   display: flex;
   flex-direction: column;
