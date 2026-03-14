@@ -1401,6 +1401,11 @@ button {
   color: var(--white);
 }
 
+.bar-segment span {
+  display: block;
+  line-height: 1.2;
+}
+
 .segment-content {
   display: flex;
   flex-direction: column;
